@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="https://drive.google.com/uc?id=1gSe-v4qfUHP_vrhCQMg0RSmkOYpbbzT6&png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>倍数判定法</title>
+    <style>
+      table {
+        font-size: 1.5em;
+        margin: auto auto;
+      }
+      td {
+        padding: 0.3em;
+      }
+      p {
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+      }
+      span {
+        font-size: 0.75rem;
+      }
+      @media print {
+        p {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>倍数判定法</h1>
+    <p><button onclick="window.print()">印刷</button></p>
+    <table></table>
+    <script>
+      const data = {
+        2 : "下1ケタが2の倍数",
+        3 : "各ケタの和が3の倍数<span><br>(例)123 => 1+2+3=6が3の倍数なので123は3の倍数<br>(例)512 => 5+1+2=8が3の倍数ではないので512は3の倍数ではない。</span>",
+        4 : "下2ケタが4の倍数",
+        5 : "下1ケタが5の倍数",
+        6 : "2と3が両方成り立つ",
+        7 : "普通に割ったほうが速い",
+        8 : "下3ケタが8の倍数",
+        9 : "各ケタの和が9の倍数<span><br>(例)234 => 2+3+4=9が9の倍数なので234は9の倍数<br>(例)512 => 5+1+2=8が9の倍数ではないので512は9の倍数ではない。</span>"
+      };
+      for (let index = 2; index < 10; index++) {
+        let datum = data[index];
+        $("table").append('<tr><td valign="top">' + index + 'の倍数判定法</td><td valign="top">=></td><td>' + datum + '</td></tr>');
+      }
+    </script>
+  </body>
+</html>
